@@ -1,0 +1,76 @@
+# Vikings Radio Network affiliates — source: https://www.vikings.com/audio/radio-network (2026 season)
+# CallSign|Frequency|Format|City|State   (blank CallSign = unlisted on the team page; resolved from FCC by freq+city)
+KFAN|100.3|FM|Minneapolis|MN
+KTLK|1130|AM|Minneapolis|MN
+KRJB|106.5|FM|Ada|MN
+KQPR|96.1|FM|Albert Lea|MN
+KKIN|94.3|FM|Aitkin|MN
+KIKV|100.7|FM|Alexandria|MN
+KKCQ|96.7|FM|Fosston|MN
+KBUN|1450|AM|Bemidji|MN
+KSCR|93.5|FM|Benson|MN
+KBEW|98.1|FM|Blue Earth|MN
+KBLB|93.3|FM|Brainerd|MN
+KBLB|1380|AM|Brainerd|MN
+KROX|1260|AM|Crookston|MN
+|105.7|FM|Crookston|MN
+KBOT|104.1|FM|Detroit Lakes|MN
+KDLM|1340|AM|Detroit Lakes|MN
+WEBC|560|AM|Duluth|MN
+WEBC|106.5|FM|Duluth|MN
+WWAX|92.1|FM|Duluth|MN
+WELY|1450|AM|Ely|MN
+WELY|94.5|FM|Ely|MN
+KRBT|1340|AM|Eveleth|MN
+KZCR|103.3|FM|Fergus Falls|MN
+KMFY|96.9|FM|Grand Rapids|MN
+WMNT|650|AM|Hibbing|MN
+KSDM|104.1|FM|International Falls|MN
+KUXX|105.7|FM|Jackson|MN
+KLCH|94.9|FM|Lake City|MN
+KYSM|1230|AM|Mankato|MN
+KXLP|94.1|FM|Mankato|MN
+KARL|105.1|FM|Marshall|MN
+KKOK|95.7|FM|Morris|MN
+KOWZ|100.9|FM|Owatonna|MN
+KNUJ|107.3|FM|New Ulm|MN
+WCMP|100.9|FM|Pine City|MN
+KCUE|1250|AM|Red Wing|MN
+KRCH|101.7|FM|Rochester|MN
+KFAN|1270|AM|Rochester|MN
+WJON|1240|AM|St. Cloud|MN
+KXXS|1390|AM|St. Cloud|MN
+KEMJ|101.5|FM|St. James|MN
+KTRF|1230|AM|Thief River Falls|MN
+WBHA|1190|AM|Wabasha|MN
+KKWS|105.9|FM|Wadena|MN
+KKWQ|92.5|FM|Warroad|MN
+KFOW|1170|AM|Waseca|MN
+KWLM|1340|AM|Willmar|MN
+KWMN|99.3|FM|Winona|MN
+KWOA|730|AM|Worthington|MN
+KFYR|550|AM|Bismarck|ND
+KDLR|1240|AM|Devils Lake|ND
+KLTC|1460|AM|Dickinson|ND
+KRWK|101.9|FM|Fargo|ND
+KFGO|790|AM|Fargo|ND
+KKXL|1440|AM|Grand Forks|ND
+KXGT|98.3|FM|Jamestown|ND
+KQLX|106.1|FM|Lisbon|ND
+KOVC|1490|AM|Valley City|ND
+KEYZ|660|AM|Williston|ND
+KMOM|105.5|FM|Aberdeen|SD
+KMLO|100.7|FM|Mobridge|SD
+KPLO|94.5|FM|Pierre|SD
+KBWS|102.9|FM|Sisseton|SD
+KWSN|1230|AM|Sioux Falls|SD
+KPHR|106.3|FM|Watertown|SD
+WNAX|570|AM|Yankton|SD
+WMT|600|AM|Cedar Rapids|IA
+KXNO|1460|AM|Des Moines|IA
+KLKK|103.7|FM|Mason City|IA
+KIWA|105.3|FM|Sheldon|IA
+KMNS|620|AM|Sioux City|IA
+WMEQ|880|AM|Eau Claire|WI
+KQYB|98.3|FM|La Crosse|WI
+WKFX|99.1|FM|Rice Lake|WI

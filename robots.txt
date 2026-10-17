@@ -1,0 +1,7 @@
+# Robots.txt for Vikings Radio Finder
+# https://vikingsfinder.sheetsj.com/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://vikingsfinder.sheetsj.com/sitemap.xml

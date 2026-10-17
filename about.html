@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>About - Vikings Radio Finder</title>
+  <link rel="canonical" href="https://vikingsfinder.sheetsj.com/about.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn how the Vikings Radio Finder works and get tips for finding the best radio coverage for Minnesota Vikings games.">
+
+  <!-- Cache control: 1 hour cache for balance of performance and updates -->
+  <meta http-equiv="Cache-Control" content="max-age=3600">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vikingsfinder.sheetsj.com/about.html">
+  <meta property="og:title" content="About Vikings Radio Finder">
+  <meta property="og:description" content="Learn how the Vikings Radio Finder works and get tips for finding the best radio coverage for Minnesota Vikings games.">
+  <meta property="og:image" content="https://vikingsfinder.sheetsj.com/og-image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://vikingsfinder.sheetsj.com/about.html">
+  <meta property="twitter:title" content="About Vikings Radio Finder">
+  <meta property="twitter:description" content="Learn how the Vikings Radio Finder works and get tips for finding the best radio coverage for Minnesota Vikings games.">
+  <meta property="twitter:image" content="https://vikingsfinder.sheetsj.com/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- TODO: Umami analytics (see index.html) -->
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css?v=2026-10-17j">
+</head>
+<body class="about-page">
+
+<div class="header">
+  <h1>
+    <a href="." class="title-link">
+      <span class="title-long">🏈 Vikings Radio Finder</span>
+      <span class="title-short">🏈 VikingsFinder</span>
+    </a>
+  </h1>
+  <a href="." class="nav-link">
+    <span class="nav-long">← Back to Radio Finder</span>
+    <span class="nav-short">← Back</span>
+  </a>
+</div>
+
+<div class="container">
+  <h2>Skol!</h2>
+
+  <p>Heading up north to the cabin on a Sunday? Driving across the Dakotas at kickoff? Not sure what town you're even close to?</p>
+
+  <p>This app was built for you -- find the radio stations that broadcast Vikings games near your location.</p>
+
+  <h3>How It Works</h3>
+  <p>Uses your device's geolocation, then searches through the stations on the Vikings Radio Network. Results are sorted by the estimated signal strength at your location — or by straight-line distance to the tower if you switch the "Sort by" option — with signal bars to help you find the best reception.</p>
+
+  <p><strong>Not where you'll be listening?</strong> Right-click (or press and hold on a phone) anywhere on the map, or tap the 📌 button under the zoom controls and then tap the map, to rank stations for that spot instead — the lake, the deer stand, the in-laws' place. Drag the pin to fine-tune it. Tap a station to see its estimated Good and Fair range drawn on the map, or check "Show network coverage map" to shade the whole region by how clearly the Vikings Radio Network comes in.</p>
+
+  <div class="highlight">
+    <p><strong>Accuracy Note:</strong> We use actual FCC tower locations and licensed power data, and estimate signal strength using the FCC's own FM coverage curves and an AM groundwave model built on the same physics as the FCC's charts. Real reception still depends on terrain, buildings, weather, and your radio. Try a couple of the top stations!</p>
+  </div>
+
+  <h3 id="signal-strength">How Signal Strength Is Estimated</h3>
+  <p>Each station's signal bars (▰▰▰▱) and the "Sounds best" sort start from the station's FCC license data and your distance from its tower:</p>
+  <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+    <li><strong>FM stations</strong> are rated using the FCC's own F(50,50) propagation curves — the same curves the FCC uses to draw official coverage maps — based on the station's licensed effective radiated power (ERP) and antenna height above average terrain (HAAT). A 100,000-watt antenna on a 1,000-foot tower reaches much farther than the same power on a short one. The app uses the antenna height the FCC computes for each direction — the tower's height above the average terrain along that radial, from the FCC's own service contour for the station — so FM reach follows hills, valleys and directional antennas instead of being a perfect circle. Stations on Duluth's hillside antenna farm, for example, reach much farther across Lake Superior and Wisconsin than back into the hills behind them.</li>
+    <li><strong>AM stations</strong> are rated with a groundwave propagation model using the station's licensed transmitter power and frequency. AM signals hug the ground, so how far they carry depends on the soil they travel over: the app follows the path from each tower to you across the FCC's <a href="https://www.fcc.gov/media/radio/m3-ground-conductivity-map" target="_blank">M3 ground conductivity map</a>, using the FCC's equivalent-distance method for paths that cross different soils. The Red River Valley and Dakota prairie (30 on the FCC's scale) carry AM far better than central Minnesota's glacial sand or western Wisconsin (4) — so KFGO 790 reaches much farther west into North Dakota than east into Minnesota, and a station's rings on the map aren't circles. Lower AM frequencies (550, 570, 600) also carry much farther than higher ones (1400+).</li>
+    <li><strong>FM translators</strong> (low-power FM repeaters of AM stations, like KROX's 105.7 FM in Crookston) are capped by the FCC at 250 watts, so they're only rated strong within roughly 5–15 miles of their town — that's real, not a bug.</li>
+  </ul>
+
+  <p>The bars are calibrated for a car radio, not the FCC's official coverage maps. The FCC's FM coverage contour was defined decades ago for home sets with indoor antennas; a car radio with a whip antenna on flat prairie sounds clean well outside it, so a 100,000-watt FM rates "Fair" well beyond its official contour rather than "Weak".</p>
+
+  <h4>Why the "Sounds best" sort favors FM</h4>
+  <p>Signal strength is not the whole story. Once a station is "Excellent", more signal doesn't make it sound any better, and at equal strength FM simply sounds clearer than AM: three times the audio bandwidth, and no static from power lines, engine ignition, or distant lightning. So the "Sounds best" sort gives FM stations a one-tier edge once they're at least "Fair", which puts a Good FM ahead of a strong local AM but keeps a fuzzy FM below a clean AM. The signal bars always show the raw signal estimate; only the ordering applies the preference. If you'd rather see raw strength or proximity, use the "Nearest" sort.</p>
+
+  <h4>Why AM stations get weaker at night</h4>
+  <p>At night, AM signals bounce off the ionosphere and can travel hundreds of miles ("skywave"). To keep thousands of stations from interfering with each other, the FCC licenses most AM stations with a <strong>mandatory lower nighttime power</strong>, in effect from local sunset to local sunrise. This isn't optional and can't be waived for a game broadcast — for example, WMEQ 880 in Eau Claire runs 10,000 watts during the day but drops to 210 watts at night, and KFOW 1170 in Waseca goes from 1,000 watts to just 5. WPVW 1190 in Wabasha holds a daytime-only license and signs off completely at sunset. This app checks whether the sun is down at each station's tower and automatically uses the nighttime power — or marks daytimers "off air" — so for Sunday Night Football the rankings reflect what you'll actually be able to hear.</p>
+  <p>Even at full power, AM reception at night is limited by those distant stations: their skywave raises the background noise on the channel, so a signal that sounds clean in the afternoon gets buried in hiss and chatter after dark. So for every AM station the app works out its nighttime interference limit the way the FCC does: it finds every station in North America on the same or neighboring channel that's on the air at night, estimates each one's skywave signal arriving here (FCC skywave formulas, each station's licensed power and night antenna pattern), and adds them up by the FCC's root-sum-square method with its 20-to-1 protection ratio. After sunset a station rates "Fair" only where it's at least that much louder than the interference on a typical night, and its rings shrink to match. Small stations on the crowded local channels (1230–1490 kHz) lose the most; big stations on quieter channels keep more. Many stations also switch to a directional antenna at night, aimed away from the stations they have to protect; the app uses each station's licensed tower layout to draw that pattern. WNAX 570, for example, keeps the same 5,000 watts all night but beams it north and nearly nulls it to the south.</p>
+
+  <h3>Tips for Best Results</h3>
+  <p>Since radio coverage can vary greatly based on terrain, weather, tower power, and other factors:</p>
+  <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+    <li>Try the first few stations in your list - don't stop at just the closest one</li>
+    <li>Checking ahead for a night game? Set Time to 🌙 Night to see how AM stations will rank after sunset (Now follows the real time)</li>
+    <li>Heading somewhere for the game? Pin that spot on the map (right-click, press and hold, or the 📌 button) to see what you'll hear when you get there</li>
+    <li>Signal strength bars (▰▰▰▱) are estimates - always try the nearest towers first</li>
+    <li>AM stations often have better long-distance coverage in the daytime</li>
+    <li>FM stations typically provide clearer audio when in range</li>
+    <li>If you're having trouble with reception, try multiple stations from the list</li>
+  </ul>
+
+  <h3>Alternative Options</h3>
+  <p>If you can't find a clear radio signal, the official Vikings app and NFL+ stream live game audio, and SiriusXM carries every NFL game. This is especially helpful when traveling outside the network's five states.</p>
+
+  <h3>About Me</h3>
+  <p>This tool was created by <a href="https://sheetsj.com" target="_blank">Jeff Sheets</a>, who also built the <a href="https://huskerfinder.sheetsj.com" target="_blank">Husker Radio Finder</a>.</p>
+
+  <h3>Technical Details</h3>
+  <p>This application uses:</p>
+  <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+    <li>Browser geolocation API to determine your position</li>
+    <li>FCC (Federal Communications Commission) tower data for accurate location coordinates</li>
+    <li>Licensed transmitter power (AM day/night) and ERP + antenna height (FM) from FCC records</li>
+    <li>Distance calculations using actual tower positions</li>
+    <li>Interactive mapping powered by Leaflet and OpenStreetMap</li>
+    <li>FM signal estimates interpolated from the FCC F(50,50) propagation curve tables (47 CFR 73.333)</li>
+    <li>Per-direction FM antenna heights derived from the FCC's daily FM service contour data, so FM ranges reflect terrain and directional antennas</li>
+    <li>AM signal estimates from a Norton groundwave model over FCC M3 ground conductivity along each path, combined by the equivalent-distance method (47 CFR 73.183)</li>
+    <li>A sunrise/sunset calculation at each tower to apply AM nighttime power restrictions</li>
+    <li>Each AM station's licensed antenna efficiency and directional-array tower layout (FCC CDBS antenna records), turned into its day and night radiation pattern with the FCC standard-pattern formula (47 CFR 73.150)</li>
+    <li>Per-station nighttime AM interference limits computed with the FCC's skywave formulas and RSS method (47 CFR 73.182, 73.190) from every co- and adjacent-channel station in the FCC AM database</li>
+    <li>An earth-curvature correction to the AM groundwave model, fitted to the FCC's daytime 0.5 and 2 mV/m contours for nine stations (median error about 3% on stations held out of the fit)</li>
+  </ul>
+
+  <h3 id="sources">Station Sources &amp; Corrections</h3>
+  <p>The station list starts from the official <a href="https://www.vikings.com/audio/radio-network" target="_blank">Vikings Radio Network</a> affiliate page (2026 season), and each entry is matched to its FCC license for tower location and power. Where the team's list didn't line up with the stations themselves, we went with what's on the dial:</p>
+  <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+    <li><strong>Fargo — 790 AM, not 740.</strong> The team page lists "KFGO AM 740", but KFGO broadcasts on 790 AM (<a href="https://kfgo.com/" target="_blank">kfgo.com</a>, <a href="https://mwcradio.com/market/fargo-moorhead" target="_blank">Midwest Communications</a>); 740 AM is sister station <a href="https://740thefan.com/" target="_blank">740 The Fan</a>. 740 carried the Vikings as KVOX on the <a href="https://www.vikings.com/news/webpage-vikings-radio-network" target="_blank">2018 network list</a>, and the <a href="https://radioink.com/2020/05/17/vikings-sign-new-deal-with-midwest-communications/" target="_blank">2020 Midwest Communications deal</a> moved the games to KFGO-AM, so the team page's frequency appears to be left over. KRWK 101.9 FM is unchanged.</li>
+    <li><strong>Duluth — added 106.5 FM.</strong> WEBC 560 AM is simulcast on FM translator 106.5 (<a href="https://northlandfan.com/" target="_blank">Northland Fan 106.5 FM / 560 AM</a>), which the team page doesn't list. The team page's "WWAX 92.1" is now licensed as WWPE-FM (<a href="https://en.wikipedia.org/wiki/WWPE-FM" target="_blank">Sasquatch 92.1</a>); both the 92.1 and 560/106.5 signals took the Vikings when Townsquare picked up the rights (<a href="https://northpine.com/2020/03/01/two-duluth-formats-make-planned-move/" target="_blank">Northpine, 2020</a>).</li>
+    <li><strong>Crookston — 105.7 FM</strong> is listed without a call sign; it's FM translator K289CE relaying KROX 1260 AM.</li>
+    <li><strong>Call signs shown as licensed by the FCC</strong> where the team page uses a sister station's or a misspelled one: KLIZ 1380 Brainerd (listed as KBLB), KDAH 650 Hibbing (WMNT), KFSP 1230 Mankato (KYSM), KXSS 1390 St. Cloud (KXXS), WPVW 1190 Wabasha (WBHA). Frequencies are unchanged. KFAN 100.3 keeps its on-air name; its FCC license is KFXN-FM.</li>
+  </ul>
+  <p>Spot something wrong? Lineups change mid-season — <a href="https://sheetsj.com" target="_blank">let me know</a>. This site is not affiliated with or endorsed by the Minnesota Vikings or the NFL.</p>
+
+  <h3>Frequently Asked Questions</h3>
+  <div class="faq-section about-faq">
+    <details>
+      <summary>What radio station plays the Vikings game near me?</summary>
+      <p>Use the <a href=".">Vikings Radio Finder</a> to find the nearest station. Click "Find Nearest Stations" to use your GPS location. In the Twin Cities, tune to KFAN 100.3 FM or KTLK 1130 AM. The Vikings Radio Network covers Minnesota, North Dakota, South Dakota, Iowa, and Wisconsin with about 70 stations.</p>
+    </details>
+
+    <details>
+      <summary>What is the flagship radio station for the Vikings?</summary>
+      <p>KFAN 100.3 FM in Minneapolis-St. Paul, with KTLK 1130 AM also carrying games in the Twin Cities.</p>
+    </details>
+
+    <details>
+      <summary>How many radio stations broadcast Vikings games?</summary>
+      <p>About 70 Vikings Radio Network stations on 74 AM and FM frequencies for the 2026 season. View the <a href="stations.html">complete station list</a> for all frequencies.</p>
+    </details>
+
+    <details>
+      <summary>How accurate are the signal strength bars?</summary>
+      <p>They're estimates built from each station's FCC license: FM uses the FCC's official F(50,50) coverage curves (power + antenna height), and AM uses a groundwave model over the FCC's map of soil conductivity. They're good enough to rank stations against each other, which is what the "Sounds best" sort does (with FM favored over AM at similar strength, since it sounds clearer). Real-world reception still varies with terrain, buildings, weather, and your radio — see <a href="#signal-strength">"How Signal Strength Is Estimated"</a> above for the full story.</p>
+    </details>
+
+    <details>
+      <summary>Why does an AM station I hear all day turn to static at night?</summary>
+      <p>Most AM stations are required by the FCC to cut power at night (local sunset to sunrise) so their signals don't skip off the ionosphere and interfere with distant stations. Some drop dramatically — WMEQ 880 Eau Claire goes from 10,000 watts to 210. The finder accounts for this: after sunset it uses each station's nighttime power, so evening game rankings match reality.</p>
+    </details>
+
+    <details>
+      <summary>Can I check stations for a place I'm not at yet?</summary>
+      <p>Yes. Right-click the map (or press and hold on a touchscreen), or tap the 📌 button under the zoom controls and then tap the map, to drop a pin. The list re-ranks for that spot, and you can drag the pin to adjust it. The header gets a "Use my location instead" link to switch back.</p>
+    </details>
+
+    <details>
+      <summary>Is there a map of where Vikings games can be heard on the radio?</summary>
+      <p>Check "Show network coverage map" under the sort options. The map shades the region by the best estimated reception from any station in the network — dark green for Excellent, light green for Good, orange for Fair. AM stations are drawn at the power they're licensed for right now (daytime or nighttime), so the picture shrinks after sunset. Like the signal bars, it's an estimate from FCC license data; terrain and buildings will shift the real edges.</p>
+    </details>
+
+    <details>
+      <summary>Is my location data private?</summary>
+      <p>Yes! Your location data stays entirely on your device and is never sent to any server. The distance calculations happen in your browser. We don't track or store your location, and the same goes for any spot you pin on the map — it's never put in the link, saved, or reported.</p>
+    </details>
+  </div>
+</div>
+
+<div class="footer">
+  Made with 💜 by <a href="https://sheetsj.com" target="_blank">Jeff Sheets</a> - Skol!
+  <span class="footer-divider">|</span>
+  Back to <a href=".">home</a> page
+  <span class="footer-divider">|</span>
+  Station list from <a href="https://www.vikings.com/audio/radio-network" target="_blank">vikings.com</a>
+  <span class="footer-divider">|</span>
+  Not affiliated with the Minnesota Vikings or the NFL
+</div>
+
+</body>
+</html>

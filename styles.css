@@ -1,0 +1,1544 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+/* Header Styles */
+.header {
+  background: #4F2683;
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.title-link {
+  color: white;
+  text-decoration: none;
+}
+
+.title-link:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.title-short {
+  display: none;
+}
+
+.nav-short {
+  display: none;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.desktop-nav .nav-link {
+  margin-top: 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Main Page Styles */
+#display {
+  background: white;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.9rem;
+  color: #666;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Clickable coordinates: recenters the map on the user's location */
+.location-link {
+  color: #4285F4;
+  text-decoration: none;
+  border-bottom: 1px dotted #4285F4;
+  margin-left: 0.25em;
+}
+
+.location-link:hover {
+  color: #4F2683;
+  border-bottom-color: #4F2683;
+}
+
+/* index.html: header + location line + finder/map + footer fill exactly one
+   viewport; the FAQ scrolls in below. The shell sizes the container, so the
+   header/footer can change height without breaking the math. */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.app-shell > .header,
+.app-shell > #display,
+.app-shell > .footer {
+  flex-shrink: 0;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+#results {
+  width: 350px;
+  background: white;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.controls-panel {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fafafa;
+}
+
+.find-button {
+  width: 100%;
+  background: #4F2683;
+  color: white;
+  border: none;
+  padding: 0.65rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 0.75rem;
+}
+
+.find-button:hover {
+  background: #3F1E6A;
+}
+
+.find-button:active {
+  background: #331856;
+}
+
+.find-button:focus-visible,
+.station-item:focus-visible {
+  outline: 2px solid #4F2683;
+  outline-offset: 2px;
+}
+
+/* Segmented control: single-select radios styled as pills in one bordered
+   strip. Used for the sport filter, the sort row and the coverage band row. */
+.segmented {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border: 1px solid #4F2683;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.segmented label {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  padding: 0.4rem 0.2rem;
+  min-height: 2.1rem;
+  color: #333;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  border-left: 1px solid #DDCDEE;
+  transition: background 0.15s, color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.segmented label:first-child {
+  border-left: none;
+}
+
+.segmented label:hover {
+  background: #F5F0FA;
+}
+
+.segmented input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.segmented label:has(input:checked) {
+  background: #4F2683;
+  color: #fff;
+}
+
+.segmented label:has(input:focus-visible) {
+  outline: 2px solid #333;
+  outline-offset: -2px;
+}
+
+/* Sport filter: full-width strip. Text labels drop out on narrow screens
+   leaving emoji so it stays on one row. */
+.sport-filter {
+  width: 100%;
+}
+
+.sport-filter sup {
+  font-size: 0.6em;
+  font-weight: 700;
+  margin-left: -0.1em;
+}
+
+/* Labelled option rows (Sort by / Band): caption on the left, a smaller
+   segmented control filling the rest of the row */
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.option-row .option-label {
+  color: #666;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 3.6rem; /* lines up the Sort / Time / Band button groups */
+}
+
+.option-row .segmented {
+  flex: 1 1 auto;
+}
+
+.option-row .segmented label {
+  min-height: 1.7rem;
+  padding: 0.25rem 0.4rem;
+  font-size: 0.8rem;
+}
+
+/* Network coverage map toggle (below the sort row) */
+.coverage-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+  padding-left: 0.25rem;
+  color: #333;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.coverage-toggle input[type="checkbox"] {
+  cursor: pointer;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+/* Band row under the coverage toggle; only shown while the overlay is on */
+.coverage-band {
+  margin-top: 0.35rem;
+  padding-left: 1.6rem;
+}
+
+.coverage-band[hidden] {
+  display: none;
+}
+
+/* Pick-a-spot: 📌 control under the zoom buttons, crosshair while armed */
+.pick-spot-control a {
+  font-size: 17px;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.pick-spot-control a.active {
+  background: #4F2683;
+  color: #fff;
+}
+
+.leaflet-container.picking-spot {
+  cursor: crosshair;
+}
+
+/* Blue teardrop for a pinned listening spot (the GPS dot stays round) */
+.pin-marker .pin-head {
+  width: 22px;
+  height: 22px;
+  margin: 2px 0 0 4px;
+  background: #4285F4;
+  border: 3px solid #fff;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  cursor: grab;
+}
+
+/* Full-screen map: the map pane covers the viewport; the rest of the page stays put underneath */
+.fullscreen-control a {
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+
+body.map-fullscreen {
+  overflow: hidden; /* no page scroll behind the map */
+}
+
+body.map-fullscreen #map {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  height: 100vh;
+  height: 100dvh;
+  max-height: none;
+}
+
+.coverage-map-legend {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.coverage-map-legend strong {
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.coverage-swatch {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 2px;
+  margin-right: 0.4em;
+  vertical-align: -0.1em;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.coverage-note {
+  color: #777;
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
+}
+
+.night-flag {
+  cursor: help;
+  font-size: 0.85em;
+}
+
+.night-legend {
+  display: block;
+  color: #777;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* Map popup: city heading, one line per frequency, estimated range footer */
+.station-popup h3 {
+  margin: 0 0 4px 0;
+  font-size: 1em;
+  color: #333;
+}
+
+.popup-station {
+  white-space: nowrap;
+  line-height: 1.6;
+}
+
+.popup-station .station-sport-emoji {
+  margin-left: 2px;
+}
+
+.popup-role {
+  color: #999;
+  font-size: 0.85em;
+  cursor: help;
+}
+
+/* Estimated coverage range footer (rings drawn by showCoverage) */
+.coverage-legend {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid #eee;
+  color: #777;
+  font-size: 0.78em;
+  line-height: 1.5;
+  white-space: nowrap;
+  cursor: help;
+}
+
+.coverage-good,
+.coverage-fair {
+  font-weight: 600;
+}
+
+.coverage-good { color: #4CAF50; }
+.coverage-fair { color: #FFA500; }
+
+/* Compact one-line legend pill in the controls panel, faded Vikings purple */
+a.night-legend {
+  padding: 0.3rem 0.6rem;
+  margin-top: 0.55rem;
+  text-decoration: none;
+  color: #8a5a5a;
+  background: #F5F0FA;
+  border: 1px solid #E6DCF0;
+  border-radius: 999px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+a.night-legend:hover {
+  color: #4F2683;
+  border-color: #D3C1E8;
+}
+
+/* Full-sentence legend under the station table on stations.html */
+p.night-legend {
+  text-align: left;
+  margin: 0.75rem 0;
+}
+
+/* Footnote citations on stations.html: [1] in the text, sources listed below the table */
+.fn-ref {
+  font-size: 0.7em;
+  line-height: 0;
+  vertical-align: super;
+  margin-left: 0.1em;
+}
+
+.fn-ref a {
+  color: #4F2683;
+  text-decoration: none;
+}
+
+.fn-ref a:hover,
+.footnotes .fn-back:hover {
+  text-decoration: underline;
+}
+
+.footnotes {
+  margin: 1.5rem 0 0 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e0e0e0;
+  color: #777;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.footnotes li {
+  margin-bottom: 0.4rem;
+}
+
+.footnotes li:target {
+  background: #F5F0FA;
+}
+
+.footnotes a {
+  color: #4F2683;
+  text-decoration: none;
+}
+
+.footnotes .fn-back {
+  margin-left: 0.25em;
+}
+
+#map {
+  flex: 1;
+  height: 100%;
+  /* Set explicitly so Leaflet doesn't write an inline position (which would
+     override the full-screen rule below) */
+  position: relative;
+}
+
+#station-list {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.station-item {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: #f9f9f9;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.station-item:hover {
+  background: #f0f0f0;
+  border-color: #4F2683;
+}
+
+.station-item.nearest {
+  background: #F5F0FA;
+  border-color: #4F2683;
+  border-width: 2px;
+}
+
+/* The frequency picked from the list, when its popup lists several */
+.popup-station.selected {
+  background: #E6DCF0;
+  box-shadow: inset 3px 0 0 #4F2683;
+  border-radius: 2px;
+  margin: 0 -0.35rem;
+  padding: 0 0.35rem;
+}
+
+/* The station whose popup is open on the map */
+.station-item.selected {
+  background: #E6DCF0;
+  border-color: #4F2683;
+  border-width: 2px;
+  box-shadow: inset 6px 0 0 #4F2683, 0 2px 6px rgba(79, 38, 131, 0.25);
+}
+
+.station-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem;
+  line-height: 1.3;
+}
+
+.station-location {
+  color: #333;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.station-location:after {
+  content: " -";
+  color: #999;
+}
+
+.station-freq {
+  font-weight: bold;
+  color: #4F2683;
+  font-size: 0.95rem;
+}
+
+.station-call {
+  color: #333;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.station-distance {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.distance-short {
+  display: none;
+}
+
+.station-power {
+  color: #666;
+  font-size: 0.85em;
+  background: #e8f5e9;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  display: inline-block;
+  margin-top: 0.2rem;
+}
+
+.station-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.4rem;
+  gap: 0.5rem;
+}
+
+.station-right {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.signal-indicator {
+  font-size: 0.95em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  cursor: help;
+}
+
+.station-sports {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.station-sport {
+  display: inline-block;
+  padding: 0.15rem 0.4rem;
+  background: #e0e0e0;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  margin-right: 0;
+  line-height: 1.2;
+}
+
+.station-sport-emoji {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  cursor: help;
+}
+
+.station-sport-emoji sup {
+  font-size: 0.6em;
+  font-weight: 700;
+  color: #666;
+  margin-left: -0.1em;
+}
+
+/* Overflow station line folded into its primary's card (KCRO 660 under WOW 590) */
+.station-backup {
+  margin: 0.3rem 0 0.15rem 0.25rem;
+  padding-left: 0.4rem;
+  border-left: 2px solid #e0e0e0;
+  color: #888;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  cursor: help;
+}
+
+.backup-arrow {
+  color: #bbb;
+}
+
+.backup-freq {
+  font-weight: 600;
+  color: #b04040;
+}
+
+.backup-call {
+  font-weight: 600;
+  color: #666;
+}
+
+.backup-note {
+  font-style: italic;
+  color: #999;
+}
+
+/* Primary/secondary market role badge (also used for the translator badge on stations.html) */
+.station-role {
+  display: inline-block;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+
+.station-role.primary {
+  background: #4F2683;
+  color: #fff;
+}
+
+.station-role.secondary {
+  background: #e0e0e0;
+  color: #666;
+}
+
+.station-sport.football {
+  background: #4F2683;
+  color: white;
+}
+
+.station-sport.volleyball {
+  background: #333;
+  color: white;
+}
+
+.station-sport.mens-basketball,
+.station-sport.men-s-basketball {
+  background: #6c6d70;
+  color: white;
+}
+
+.station-sport.womens-basketball,
+.station-sport.women-s-basketball {
+  background: #FF1493;
+  color: white;
+}
+
+.sport-short {
+  display: none;
+}
+
+/* About Page Specific Styles */
+body.about-page {
+  line-height: 1.6;
+}
+
+.about-page .container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: auto;
+  display: block;
+}
+
+h2 {
+  color: #4F2683;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #4F2683;
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  color: #333;
+  margin: 1.5rem 0 0.75rem 0;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.highlight {
+  background: #F5F0FA;
+  padding: 1rem;
+  border-left: 4px solid #4F2683;
+  margin: 1rem 0;
+}
+
+.highlight strong {
+  color: #4F2683;
+}
+
+a {
+  color: #4F2683;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* GPS Banner Styles */
+.gps-banner {
+  background: #F5F0FA;
+  padding: 1.5rem;
+  border-left: 4px solid #4F2683;
+  margin: 1rem 0 2rem 0;
+  border-radius: 4px;
+}
+
+.gps-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.gps-banner-text {
+  flex: 1;
+}
+
+.gps-banner-title {
+  color: #4F2683;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  border: none;
+  padding: 0;
+}
+
+.gps-banner-subtitle {
+  color: #444;
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.gps-banner-button {
+  display: block;
+  width: 80%;
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #4F2683;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(79, 38, 131, 0.3);
+  border: 3px solid #4F2683;
+}
+
+.gps-banner-button:hover {
+  background: #3F1E6A;
+  border-color: #3F1E6A;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(79, 38, 131, 0.4);
+  text-decoration: none;
+}
+
+.gps-banner-button:active {
+  transform: translateY(-1px);
+  background: #331856;
+  border-color: #331856;
+  box-shadow: 0 3px 10px rgba(79, 38, 131, 0.3);
+}
+
+/* Station Table Styles */
+.station-source {
+  background: #F5F0FA;
+  padding: 1rem;
+  border-left: 4px solid #4F2683;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+
+.station-list-details {
+  margin: 1.5rem 0;
+}
+
+.toggle-list-button {
+  width: 100%;
+  background: #f8f8f8;
+  border: 2px solid #4F2683;
+  color: #4F2683;
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  list-style: none;
+  text-align: center;
+}
+
+.toggle-list-button:hover {
+  background: #F5F0FA;
+  border-color: #3F1E6A;
+  color: #3F1E6A;
+}
+
+.toggle-list-button::-webkit-details-marker {
+  display: none;
+}
+
+.station-list-details[open] .toggle-list-button {
+  margin-bottom: 1.5rem;
+}
+
+.filter-controls {
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.filter-controls label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.filter-controls input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.station-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.station-table th,
+.station-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.station-table th {
+  background: #f8f8f8;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.station-table tr:hover {
+  background: #f9f9f9;
+}
+
+.station-table tr:last-child td {
+  border-bottom: none;
+}
+
+.station-count {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+
+/* FAQ Section Styles — sits below the footer strip on index.html so the app
+   (header, finder, map, footer) still fits the first viewport; the FAQ is
+   a centered content section on the page background underneath */
+.faq-section {
+  background: white;
+  padding: 1.5rem;
+  margin: 1.5rem auto 2rem;
+  max-width: 900px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+}
+
+.faq-section h2 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.faq-section details {
+  margin-bottom: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background: #fafafa;
+}
+
+.faq-section summary {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.9rem;
+  list-style: none;
+}
+
+.faq-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-section summary::before {
+  content: "+ ";
+  color: #4F2683;
+  font-weight: bold;
+}
+
+.faq-section details[open] summary::before {
+  content: "- ";
+}
+
+.faq-section summary:hover {
+  background: #f0f0f0;
+}
+
+.faq-section details p {
+  padding: 0.75rem 1rem;
+  margin: 0;
+  font-size: 0.85rem;
+  color: #555;
+  border-top: 1px solid #e0e0e0;
+  background: white;
+}
+
+/* Static stations (noscript fallback) */
+.static-stations {
+  background: white;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.static-stations h2 {
+  color: #4F2683;
+  border-bottom: 2px solid #4F2683;
+  padding-bottom: 0.5rem;
+}
+
+.static-stations h3 {
+  margin-top: 1.5rem;
+}
+
+.static-stations ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.static-stations li {
+  margin-bottom: 0.5rem;
+}
+
+/* FAQ on about page */
+.about-faq {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  max-width: none;
+  margin: 0.5rem 0 0;
+}
+
+/* Footer Styles */
+.footer {
+  background: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
+  padding: 1rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.about-page .footer {
+  margin-top: 2rem;
+}
+
+.footer a {
+  color: #4F2683;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-divider {
+  margin: 0 0.5rem;
+  color: #ccc;
+}
+
+/* Mobile Responsive Styles */
+/* Options disclosure: just a wrapper on wide screens (summary hidden, always open) */
+.more-options > summary {
+  display: none;
+}
+
+.refresh-link {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .more-options > summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    list-style: none;
+    padding: 0.15rem 0;
+    margin-bottom: 0.4rem;
+  }
+
+  .more-options > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .more-options-state {
+    flex: 1;
+    text-align: right;
+    font-size: 0.85rem;
+    color: #444;
+  }
+
+  .more-options-state::after {
+    content: ' ▾';
+    color: #999;
+  }
+
+  .more-options[open] .more-options-state::after {
+    content: ' ▴';
+  }
+
+  .more-options-state.changed {
+    color: #4F2683;
+    font-weight: 600;
+  }
+
+  /* The ☀️/🌙 legend shows with the expanded options; folded, the cards
+     keep their symbols */
+  .more-options:not([open]) + .night-legend {
+    display: none !important;
+  }
+
+  .more-options:not([open]) > summary {
+    margin-bottom: 0;
+  }
+
+  /* Once located, the header's Refresh link replaces the big Find button */
+  body.located .find-button {
+    display: none;
+  }
+
+  .refresh-link {
+    display: inline;
+    margin-left: 0.5rem;
+  }
+
+  /* Header Navigation */
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0.6rem 0.75rem;
+  }
+
+  .header h1 {
+    font-size: 1rem;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .title-link {
+    white-space: nowrap;
+  }
+
+  .title-long {
+    display: none;
+  }
+
+  .title-short {
+    display: inline;
+  }
+
+  .nav-long {
+    display: none;
+  }
+
+  .nav-short {
+    display: inline;
+  }
+
+  .desktop-nav {
+    flex-shrink: 0;
+    gap: 0.75rem;
+  }
+
+  .desktop-nav .nav-link {
+    font-size: 0.8rem;
+  }
+
+  /* On phones the panel + list + map can exceed one screen. Let the shell
+     grow so the footer is pushed below the map rather than painted over by
+     it (Leaflet's panes are z-indexed above later siblings). */
+  .app-shell {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  #results {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    flex-shrink: 0;
+  }
+
+  /* Two and a half one-line cards — the cut-off card shows the list scrolls —
+     so the map keeps the room the folded controls free up */
+  #station-list {
+    max-height: 112px;
+    overflow-y: auto;
+    padding: 0.5rem 0.6rem;
+  }
+
+  #map {
+    flex: 1;
+    min-height: 260px;
+    max-height: none;
+  }
+
+  /* The rings already show the estimated range; drop the popup footer on
+     phones so the card is shorter and covers less of the map */
+  .station-popup .coverage-legend {
+    display: none;
+  }
+
+  /* Coverage legend collapses to one row of swatches on phones so it doesn't
+     cover a third of the map; the AM note keeps only its icon (tap for text) */
+  .coverage-map-legend {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.72rem;
+    line-height: 1.2;
+  }
+
+  .coverage-map-legend strong,
+  .coverage-map-legend .coverage-note-text {
+    display: none;
+  }
+
+  .coverage-map-legend .coverage-swatch {
+    margin-right: 0.25em;
+  }
+
+  .coverage-map-legend .coverage-note {
+    margin-top: 0;
+    font-size: 0.85rem;
+  }
+
+  .controls-panel {
+    padding: 0.75rem;
+  }
+
+  .find-button {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .sport-filter label {
+    font-size: 0.95rem;
+    padding: 0.45rem 0.1rem;
+  }
+
+  .option-row .segmented label {
+    font-size: 0.9rem;
+    min-height: 1.9rem;
+  }
+
+  /* Emoji-only pills on phones so the row never wraps */
+  .sport-filter .sport-text {
+    display: none;
+  }
+
+  /* One-line cards: name on the left, sports + signal + distance on the right.
+     Long names wrap the left side only; the right side never breaks. */
+  .station-item {
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 0.5rem;
+    row-gap: 0.1rem;
+  }
+
+  .station-info {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem;
+    min-width: 0;
+  }
+
+  .station-backup {
+    flex-basis: 100%;
+    order: 3;
+    margin: 0 0 0 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  .station-location {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .station-freq {
+    font-size: 0.9rem;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .station-call {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .station-distance {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .distance-long {
+    display: none;
+  }
+
+  .distance-short {
+    display: inline;
+  }
+
+  .station-meta {
+    margin-top: 0;
+    margin-left: auto;
+    flex: 0 0 auto;
+    gap: 0.5rem;
+  }
+
+  .station-sports {
+    display: flex;
+    gap: 0.15rem;
+    flex-wrap: nowrap;
+  }
+
+  .station-sport-emoji {
+    font-size: 0.85rem;
+  }
+
+  .station-sport {
+    padding: 0.15rem 0.35rem;
+    font-size: 0.7rem;
+  }
+
+  .station-right {
+    gap: 0.35rem;
+  }
+
+  .signal-indicator {
+    font-size: 0.9em;
+  }
+
+  .sport-long {
+    display: none;
+  }
+
+  .sport-short {
+    display: inline;
+  }
+
+  /* Footer - compact for mobile */
+  .footer {
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+
+  .faq-section {
+    margin: 0.75rem;
+    padding: 1rem;
+  }
+
+  .footer-divider {
+    display: none; /* Hide dividers on mobile */
+  }
+
+  .footer a {
+    display: inline-block;
+    margin: 0 0.25rem;
+  }
+
+  /* About page mobile styles */
+  .about-page .container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  /* GPS Banner mobile styles */
+  .gps-banner {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .gps-banner-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .gps-banner-title {
+    font-size: 1.2rem;
+  }
+
+  .gps-banner-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .gps-banner-button {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* Station table mobile styles */
+  .filter-controls {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.35rem;
+    justify-content: center;
+    overflow-x: auto;
+  }
+
+  .filter-controls label {
+    font-size: 0.85rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .filter-controls label span {
+    font-size: 0.85rem;
+  }
+
+  .station-table {
+    font-size: 0.9rem;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .station-table thead {
+    display: none; /* Hide header on mobile */
+  }
+
+  .station-table tbody {
+    display: block;
+  }
+
+  .station-table tr {
+    display: block;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 0.5rem;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+  }
+
+  .station-table tr:hover {
+    background: white;
+  }
+
+  .station-table td {
+    display: block;
+    padding: 0.2rem 0;
+    border: none;
+    text-align: left;
+  }
+
+  .station-table td:before {
+    display: none; /* Remove labels on mobile */
+  }
+
+  /* City, Frequency and call sign all on same line */
+  .station-table td:first-child,
+  .station-table td:nth-child(3),
+  .station-table td:nth-child(4) {
+    display: inline;
+  }
+
+  /* Style city */
+  .station-table td:first-child {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+  }
+
+  .station-table td:first-child:after {
+    content: " - ";
+    color: #999;
+    font-weight: normal;
+  }
+
+  /* Frequency */
+  .station-table td:nth-child(3) {
+    color: #333;
+    font-weight: 600;
+  }
+
+  .station-table td:nth-child(3):after {
+    content: " ";
+    color: #999;
+  }
+
+  /* Call sign */
+  .station-table td:nth-child(4) {
+    color: #4F2683;
+    font-weight: 600;
+  }
+
+  /* Sports row */
+  .station-table td:last-child {
+    padding-top: 0.4rem;
+  }
+
+  /* Sports badges in table */
+  .station-table .station-sport {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    margin-right: 0.3rem;
+    margin-bottom: 0.3rem;
+    display: inline-block;
+  }
+
+  /* Hide state on mobile via data attribute */
+  .station-table td:nth-child(2) {
+    display: none;
+  }
+
+  .gps-banner-button {
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+  }
+}

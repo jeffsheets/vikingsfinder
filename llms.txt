@@ -1,0 +1,46 @@
+# Vikings Radio Finder
+
+> Find the closest Minnesota Vikings radio station to your location using GPS
+
+## Overview
+
+Vikings Radio Finder (VikingsFinder) is a free web tool that helps Minnesota Vikings fans find the closest AM and FM radio stations broadcasting Vikings games near their current location. The app uses GPS/geolocation to calculate distances to actual FCC radio tower locations and ranks stations by estimated signal strength or distance.
+
+For the 2026 season, about 70 Vikings Radio Network stations broadcast on 74 AM/FM frequencies across Minnesota (49), North Dakota (10), South Dakota (7), Iowa (5), and Wisconsin (3).
+
+## Key Features
+
+- GPS-based finder for the closest Vikings radio station to you right now
+- Interactive map showing station locations and user position
+- Sort by distance or by what should sound best at your location (estimated signal strength, with FM favored over AM at similar strength for its clearer audio)
+- Pick any spot on the map (right-click, long-press, or the pin button) to rank stations for a place you're heading to instead of where you are
+- Network coverage map: shade the whole region by estimated reception (Excellent / Good / Fair) from any station, reflecting AM day/night power
+- No account required, completely free, privacy-focused (location stays on device)
+
+## Major Vikings Radio Stations (2026)
+
+- KFAN 100.3 FM - Minneapolis-St. Paul, MN (flagship; licensed as KFXN-FM)
+- KTLK 1130 AM - Minneapolis-St. Paul, MN
+- WEBC 560 AM - Duluth, MN
+- KFYR 550 AM - Bismarck, ND
+- WNAX 570 AM - Yankton, SD
+- WMT 600 AM - Cedar Rapids, IA
+- KXNO 1460 AM - Des Moines, IA
+- WMEQ 880 AM - Eau Claire, WI
+
+## Listening Outside the Network
+
+The official Vikings app and NFL+ stream live game audio; SiriusXM carries every NFL game on a channel that changes weekly.
+
+## Pages
+
+- https://vikingsfinder.sheetsj.com/ - GPS finder and map
+- https://vikingsfinder.sheetsj.com/stations.html - Complete 2026 station list by state and city
+- https://vikingsfinder.sheetsj.com/about.html - How it works, signal-strength model, FAQ
+
+## Data Sources
+
+- Station list: https://www.vikings.com/audio/radio-network
+- Tower coordinates, power, and antenna height: FCC license records
+
+Not affiliated with or endorsed by the Minnesota Vikings or the NFL. Built by Jeff Sheets (https://sheetsj.com), who also built the Husker Radio Finder (https://huskerfinder.sheetsj.com/).

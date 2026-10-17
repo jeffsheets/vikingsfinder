@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Radio waves in background -->
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#4F2683" stroke-width="2" opacity="0.3"/>
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#4F2683" stroke-width="2" opacity="0.5"/>
+
+  <!-- Location pin -->
+  <path d="M32 10 C24 10 18 16 18 24 C18 34 32 48 32 48 C32 48 46 34 46 24 C46 16 40 10 32 10 Z"
+        fill="#4F2683" stroke="#fff" stroke-width="1"/>
+
+  <!-- Inner circle on pin -->
+  <circle cx="32" cy="24" r="6" fill="#fff"/>
+  <circle cx="32" cy="24" r="3" fill="#FFC62F"/>
+</svg>
