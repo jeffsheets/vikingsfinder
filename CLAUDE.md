@@ -15,7 +15,7 @@ npx serve .
 # Visit http://localhost:3000
 ```
 
-Deploys to GitHub Pages from master once the repo exists.
+Repo: https://github.com/jeffsheets/vikingsfinder (default branch `main`). Deploys to GitHub Pages from `main` once Pages is enabled.
 
 ## Code Architecture
 
