@@ -55,7 +55,7 @@ The FM model, ranking, pick-a-spot, and full-screen behavior are unchanged from 
 ### Privacy & Analytics
 
 - Location data stays client-side
-- Umami is not set up yet (TODO comment in index.html). `track()` no-ops without it
+- Umami shares the sheetsj.com website (ID 68632b69-…, account site limit reached), restricted with `data-domains="vikingsfinder.sheetsj.com"`; filter by Hostname in the Umami dashboard to separate it from the blog. Same custom events as huskerfinder via `track()`
 - Pinned points are never written to the URL, stored, or sent to analytics
 
 ## Updating Stations for a New Season
