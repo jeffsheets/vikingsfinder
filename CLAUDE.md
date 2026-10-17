@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Vikings Radio Finder (VikingsFinder) is a vanilla JavaScript web application that helps users find radio stations broadcasting Minnesota Vikings games near their location. It is a spin-off of Husker Radio Finder (`../huskerfinder`) and shares its map, signal model, and coverage code; the two are copies, not a shared library, so fixes to `js/lib.js` / `js/coverage.js` / `js/map.js` may be worth porting between them.
 
-**Planned domain**: https://vikingsfinder.sheetsj.com/ (no CNAME yet)
+**Live site**: https://vikingsfinder.sheetsj.com/ (GitHub Pages behind Cloudflare, like huskerfinder)
 
 ## Development Commands
 
@@ -67,6 +67,21 @@ The FM model, ranking, pick-a-spot, and full-screen behavior are unchanged from 
 5. Update station counts in visible copy (index.html FAQ + JSON-LD, stations.html intro, about.html FAQ, llms.txt)
 6. Bump `?v=` cache-busting params on changed JS/CSS references (GitHub Pages caches 4 hours)
 7. Update `<lastmod>` in sitemap.xml
+8. After the changes deploy, ping IndexNow (key file `4f9c1beb20c1dd28fa17886072c72215.txt` is in the site root):
+   ```bash
+   curl -X POST "https://api.indexnow.org/indexnow" -H "Content-Type: application/json; charset=utf-8" -d '{
+     "host": "vikingsfinder.sheetsj.com",
+     "key": "4f9c1beb20c1dd28fa17886072c72215",
+     "keyLocation": "https://vikingsfinder.sheetsj.com/4f9c1beb20c1dd28fa17886072c72215.txt",
+     "urlList": [
+       "https://vikingsfinder.sheetsj.com/",
+       "https://vikingsfinder.sheetsj.com/stations.html",
+       "https://vikingsfinder.sheetsj.com/about.html",
+       "https://vikingsfinder.sheetsj.com/llms.txt",
+       "https://vikingsfinder.sheetsj.com/sitemap.xml"
+     ]
+   }'
+   ```
 
 ## Git Workflow
 
