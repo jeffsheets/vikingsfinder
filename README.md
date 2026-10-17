@@ -32,4 +32,4 @@ node scripts/build-stations.js
 node scripts/generate-station-table.js
 ```
 
-Not affiliated with or endorsed by the Minnesota Vikings or the NFL.
+Not affiliated with the Minnesota Vikings or the NFL.

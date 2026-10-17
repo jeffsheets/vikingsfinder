@@ -91,4 +91,4 @@ The FM model, ranking, pick-a-spot, and full-screen behavior are unchanged from 
 
 - Static site — no build process, no backend, no bundler
 - Scripts load in order: stations.js → conductivity.js → lib.js → coverage.js → map.js
-- Not affiliated with the Minnesota Vikings or the NFL — keep the footer note, no team logos or marks
+- Not affiliated with the Minnesota Vikings or the NFL — the note lives on the About page (Sources & Corrections); footers credit vikings.com like huskerfinder credits huskers.com. No team logos or marks

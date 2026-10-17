@@ -43,4 +43,4 @@ The official Vikings app and NFL+ stream live game audio; SiriusXM carries every
 - Station list: https://www.vikings.com/audio/radio-network
 - Tower coordinates, power, and antenna height: FCC license records
 
-Not affiliated with or endorsed by the Minnesota Vikings or the NFL. Built by Jeff Sheets (https://sheetsj.com), who also built the Husker Radio Finder (https://huskerfinder.sheetsj.com/).
+Not affiliated with the Minnesota Vikings or the NFL. Built by Jeff Sheets (https://sheetsj.com), who also built the Husker Radio Finder (https://huskerfinder.sheetsj.com/).
