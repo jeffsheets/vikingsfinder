@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Purple tile with a white football -->
+  <!-- Purple tile with a white football (simplified for small sizes) -->
   <rect width="64" height="64" rx="14" fill="#4F2683"/>
   <g transform="rotate(-35 32 32)">
-    <path d="M7 32 C16 15 48 15 57 32 C48 49 16 49 7 32 Z" fill="#fff"/>
-    <path d="M15 23.5 C16.4 29 16.4 35 15 40.5 M19 21.2 C20.4 27.5 20.4 36.5 19 42.8 M49 23.5 C47.6 29 47.6 35 49 40.5 M45 21.2 C43.6 27.5 43.6 36.5 45 42.8" fill="none" stroke="#4F2683" stroke-width="2.2"/>
-    <path d="M23 32 H41" stroke="#4F2683" stroke-width="2.6" stroke-linecap="round"/>
-    <path d="M26 28.5 V35.5 M30 28.5 V35.5 M34 28.5 V35.5 M38 28.5 V35.5" stroke="#4F2683" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M5 32 C15 13 49 13 59 32 C49 51 15 51 5 32 Z" fill="#fff"/>
+    <path d="M16.5 22 C18.5 28.5 18.5 35.5 16.5 42 M47.5 22 C45.5 28.5 45.5 35.5 47.5 42" fill="none" stroke="#4F2683" stroke-width="3.5"/>
+    <path d="M24 32 H40" stroke="#4F2683" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M27 27.5 V36.5 M32 27.5 V36.5 M37 27.5 V36.5" stroke="#4F2683" stroke-width="3.2" stroke-linecap="round"/>
   </g>
 </svg>
